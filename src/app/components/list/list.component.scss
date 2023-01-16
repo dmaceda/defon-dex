@@ -1,0 +1,107 @@
+@import "../../../assets/styles/variables.scss";
+
+//Searchbar Styles
+
+.search {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  animation: move_in 2s ease-in;
+}
+
+//Table Styles
+
+.container {
+  width: 90%;
+  height: 80vh;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  margin: auto;
+}
+
+.container-right {
+  width: 30%;
+}
+
+.table {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  animation: move_in 2s ease-in;
+}
+
+.row-name {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.row-title {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+// Animations
+
+@keyframes move_in {
+  0% {
+    transform: translate(-20%, 0);
+  }
+}
+
+// Media Queries
+
+@media (max-width: 1880px) {
+}
+
+@media (max-width: 1280px) {
+  .container {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .table {
+    width: 100%;
+  }
+
+  .row-name {
+    font-size: 0.7rem;
+  }
+
+  .row-title {
+    font-size: 0.7rem;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+  }
+  .container-right {
+    width: 100%;
+  }
+}

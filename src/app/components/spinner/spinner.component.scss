@@ -1,0 +1,37 @@
+.pokeball {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: load 2s infinite;
+}
+
+#pokeball {
+  width: 200px;
+  margin-top: 5rem;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1280px) {
+  #pokeball {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  #pokeball {
+    margin-top: 0;
+  }
+}

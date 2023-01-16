@@ -1,0 +1,9 @@
+<!-- Table Abcd list -->
+<div class="abc-container">
+  <div class="abc-list">
+    <div *ngFor="let key of abcedario | keyvalue">
+      <span id="count">{{ key.value }}</span>
+      <p id="letter">{{ key.key }}</p>
+    </div>
+  </div>
+</div>

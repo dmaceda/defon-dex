@@ -1,0 +1,32 @@
+<div class="card-lateral" *ngIf="pokemon">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="card-body">
+        <img src="{{ img }}" alt="pokemon image" class="card-body-img" />
+        <h1 class="card-body-title">
+          {{ pokemon.name }}
+          <span>{{ hp }} Hp</span>
+        </h1>
+        <p class="card-body-text">{{ exp }} Exp</p>
+        <p class="card-body-type">{{ type }}</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-info">
+          <h3>{{ attack }}K</h3>
+          <p>Attack</p>
+        </div>
+
+        <div class="card-footer-info">
+          <h3>{{ speed }}K</h3>
+          <p>Speed</p>
+        </div>
+
+        <div class="card-footer-info">
+          <h3>{{ defense }}K</h3>
+          <p>Defense</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

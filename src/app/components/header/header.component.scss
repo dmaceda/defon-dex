@@ -1,0 +1,25 @@
+@import "../../../assets/styles/variables.scss";
+
+.header-container {
+  background: linear-gradient(#bf0426b5, #8c031cc4);
+  box-shadow: 0 5px 0 0 rgba(88, 87, 87, 0.1);
+}
+.header {
+  margin: auto;
+  width: 90%;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-icons {
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 10px;
+
+    &-i {
+      margin-left: 20px;
+    }
+  }
+}
