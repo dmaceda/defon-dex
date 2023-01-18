@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { LetterCounterComponent } from './components/letter-counter/letter-counter.component';
 import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     LetterCounterComponent,
     CardComponent,
     SpinnerComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
