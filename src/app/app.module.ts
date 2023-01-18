@@ -12,7 +12,6 @@ import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { LetterCounterComponent } from './components/letter-counter/letter-counter.component';
 import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -23,7 +22,6 @@ import { LandingComponent } from './components/landing/landing.component';
     FooterComponent,
     HeaderComponent,
     ListComponent,
-    LetterCounterComponent,
     CardComponent,
     SpinnerComponent,
     LandingComponent,

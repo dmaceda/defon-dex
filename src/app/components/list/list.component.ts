@@ -24,6 +24,35 @@ export class ListComponent {
   speed: string = '';
   type: string = '';
   searchedName: string = '';
+  abcedario: any = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0,
+    j: 0,
+    k: 0,
+    l: 0,
+    m: 0,
+    n: 0,
+    ñ: 0,
+    o: 0,
+    p: 0,
+    q: 0,
+    r: 0,
+    s: 0,
+    t: 0,
+    u: 0,
+    v: 0,
+    w: 0,
+    x: 0,
+    y: 0,
+    z: 0,
+  };
   myControl = new FormControl();
   options: string[] = [];
   filterByName!: Observable<string[]>;
@@ -58,7 +87,7 @@ export class ListComponent {
     let pokemonData;
     let promises = [];
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 1008; i++) {
       promises.push(
         this.pokeService
           .getPokemons(i)
@@ -72,6 +101,9 @@ export class ListComponent {
                 '../../../assets/images/unown.png',
               name: res.name,
             };
+            let pokemonName = res.name;
+            let firstLetter = pokemonName.charAt(0);
+            this.abcedario[firstLetter] += 1;
             this.data.push(pokemonData);
             this.dataSource = new MatTableDataSource<any>(this.data);
             this.dataSource.paginator = this.paginator;
@@ -98,7 +130,7 @@ export class ListComponent {
   // Function to get Pokemons by id
 
   getPokemonId(row: any) {
-    this.pokeService.getPokemons(row.position).subscribe(
+    this.pokeService.getPokemons(row).subscribe(
       (res) => {
         this.pokemon = res;
         (this.img =

@@ -14,7 +14,11 @@
     />
     <mat-icon matSuffix>search</mat-icon>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filterByName | async" [value]="option">
+      <mat-option
+        *ngFor="let option of filterByName | async"
+        [value]="option"
+        (click)="getPokemonId(option)"
+      >
         {{ option }}
       </mat-option>
     </mat-autocomplete>
@@ -83,7 +87,7 @@
         <tr
           mat-row
           *matRowDef="let row; columns: displayedColumns"
-          (click)="getPokemonId(row)"
+          (click)="getPokemonId(row.position)"
           class="rows"
         ></tr>
 
@@ -130,4 +134,11 @@
 </div>
 
 <!--  Letter Counter -->
-<app-letter-counter></app-letter-counter>
+<div class="abc-container">
+  <div class="abc-list">
+    <div *ngFor="let key of abcedario | keyvalue">
+      <span id="count">{{ key.value }}</span>
+      <p id="letter">{{ key.key }}</p>
+    </div>
+  </div>
+</div>
