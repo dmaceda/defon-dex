@@ -14,48 +14,18 @@ export class ListComponent {
   displayedColumns: string[] = ['position', 'image', 'name'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
-  pokemons = [];
+  pokemons: any = [];
   pokemon: any = '';
-  img = '';
-  hp = '';
-  exp = '';
-  attack = '';
-  defense = '';
-  speed = '';
-  type = '';
-  abcedario: any = {
-    a: 0,
-    b: 0,
-    c: 0,
-    d: 0,
-    e: 0,
-    f: 0,
-    g: 0,
-    h: 0,
-    i: 0,
-    j: 0,
-    k: 0,
-    l: 0,
-    m: 0,
-    n: 0,
-    ñ: 0,
-    o: 0,
-    p: 0,
-    q: 0,
-    r: 0,
-    s: 0,
-    t: 0,
-    u: 0,
-    v: 0,
-    w: 0,
-    x: 0,
-    y: 0,
-    z: 0,
-  };
-
+  img: string = '';
+  hp: string = '';
+  exp: string = '';
+  attack: string = '';
+  defense: string = '';
+  speed: string = '';
+  type: string = '';
+  searchedName: string = '';
   myControl = new FormControl();
   options: string[] = [];
-
   filterByName!: Observable<string[]>;
 
   @ViewChild(MatPaginator, { static: true })
@@ -102,9 +72,6 @@ export class ListComponent {
                 '../../../assets/images/unown.png',
               name: res.name,
             };
-            let pokemonName = res.name;
-            let firstLetter = pokemonName.charAt(0);
-            this.abcedario[firstLetter] += 1;
             this.data.push(pokemonData);
             this.dataSource = new MatTableDataSource<any>(this.data);
             this.dataSource.paginator = this.paginator;

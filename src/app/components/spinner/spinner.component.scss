@@ -10,6 +10,7 @@
 #pokeball {
   width: 200px;
   margin-top: 5rem;
+  animation: move 1s ease-in;
 }
 
 @keyframes load {

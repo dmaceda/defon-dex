@@ -7,7 +7,6 @@
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  animation: move 2s ease-in;
 }
 
 .card {
@@ -18,7 +17,7 @@
   overflow: hidden;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.35);
   height: 650px;
-  animation: move 1s ease-in;
+  animation: in 1s ease-in;
   border: 0.5px solid #c6c5c5c3;
 
   &-header {
@@ -42,7 +41,7 @@
       border: 10px solid black;
       border-radius: 50%;
       background: linear-gradient(#ffffff, #e6e5e5);
-      animation: move 1s ease-in;
+      animation: move 4s ease-out;
     }
 
     &-title {
@@ -98,7 +97,16 @@
 
 @keyframes move {
   0% {
-    transform: translate(20%, 0);
+    transform: translate(50%, 0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: translate(10%, 0);
   }
 }
 

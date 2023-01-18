@@ -5,6 +5,7 @@
     <input
       type="text"
       matInput
+      [(ngModel)]="searchedName"
       (keyup)="applyFilter($event)"
       placeholder="Ex. Pikachu"
       #input
@@ -20,8 +21,16 @@
   </mat-form-field>
 </div>
 
+<!-- Search Status -->
+<div class="searching-container">
+  <div class="searching" *ngIf="searchedName">
+    <p>Searching:</p>
+    <span>{{ searchedName }}...</span>
+  </div>
+</div>
+
+<!-- Table Pokemon list -->
 <div class="container">
-  <!-- Table Pokemon list -->
   <div class="table">
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
@@ -75,12 +84,17 @@
           mat-row
           *matRowDef="let row; columns: displayedColumns"
           (click)="getPokemonId(row)"
+          class="rows"
         ></tr>
 
         <!-- Row shown when there is no matching data. -->
+
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="4">
-            No data matching the filter "{{ input.value }}"
+            <div *ngIf="!input.value" class="data-loading">Loading data...</div>
+            <div *ngIf="input.value" class="data-loading">
+              No data matching the filter "{{ searchedName }}"
+            </div>
           </td>
         </tr>
       </table>
@@ -96,10 +110,12 @@
   </div>
 
   <!-- Spinner Pokemon detail -->
-  <div class="container-right">
-    <app-spinner [pokemon]="pokemon"></app-spinner>
+  <div class="container-right" *ngIf="!pokemon">
+    <app-spinner></app-spinner>
+  </div>
 
-    <!-- Card lateral Pokemon detail -->
+  <!--  Pokemon Detail -->
+  <div class="container-right" *ngIf="pokemon">
     <app-card
       [pokemon]="pokemon"
       [img]="img"
