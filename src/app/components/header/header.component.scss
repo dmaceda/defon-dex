@@ -17,28 +17,20 @@
     font-size: 2.5rem;
     cursor: pointer;
     padding: 10px;
-
-    &-i {
-      margin-left: 20px;
-    }
-    &-menu {
-      display: none;
-      margin-left: 20px;
-    }
   }
+}
+
+.menu {
+  display: none;
 }
 
 // Media Queries
 
 @media (max-width: 768px) {
-  .header {
-    &-icons {
-      &-i {
-        display: none;
-      }
-      &-menu {
-        display: block;
-      }
-    }
+  .menu {
+    display: block;
+  }
+  .icon {
+    display: none;
   }
 }
