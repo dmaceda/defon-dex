@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  alert() {
-    alert('Hello World');
+  alertFunction() {
+    alert('New feature coming soon!');
   }
 }
