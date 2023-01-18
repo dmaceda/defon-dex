@@ -21,5 +21,24 @@
     &-i {
       margin-left: 20px;
     }
+    &-menu {
+      display: none;
+      margin-left: 20px;
+    }
+  }
+}
+
+// Media Queries
+
+@media (max-width: 768px) {
+  .header {
+    &-icons {
+      &-i {
+        display: none;
+      }
+      &-menu {
+        display: block;
+      }
+    }
   }
 }
