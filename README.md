@@ -8,6 +8,8 @@ También se podrá ver el detalle de cada Pokemon con mas información relevante
 Fue creada con CLI Angular 15.1.1.
 Se utilizó Material Angular y SCSS para estilos.
 
+Live: https://defon-dex.vercel.app/
+
 ![Preview de la App ](https://github.com/dmaceda/defon-dex/blob/master/src/assets/images/mokup-defondex.png)
 
 
